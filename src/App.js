@@ -28,7 +28,7 @@ const Detail = (props)=>{
               show === 'w3-hide'
               ? show
               : show}>Subregião: {countries.subregion}</p>
-      <button name={index} type="submit" onClick={showDetail}>show</button>
+      <button name={index} type="submit" onClick={showDetail}>show/hide</button>
       </div>)
 }
 
