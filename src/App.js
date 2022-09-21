@@ -104,7 +104,6 @@ const App = ()=> {
     })
 }, [])
 
-// console.log('city ', city);
 let selectedCountries = new RegExp(newName)
 const result = city.filter(newCity => newCity.name.common.search(selectedCountries) >= 0)
 // console.log('result Show', result);
