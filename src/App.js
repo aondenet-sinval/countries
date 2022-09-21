@@ -96,10 +96,10 @@ const App = ()=> {
   const [city, setCity] = useState([])
   const [newName, setNewName] = useState('')
   // Definição da url no servidor local para teste
-  // const url = "http://localhost:3001"
+  const url = "https://restcountries.com"
   useEffect(() => {
   axios
-    .get(`/v3.1/all`).then(response => {
+    .get(`${url}/v3.1/all`).then(response => {
       setCity(response.data);
     })
 }, [])
