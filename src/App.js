@@ -94,7 +94,7 @@ const Form = (props) =>{
 }
 const App = ()=> {
   const [city, setCity] = useState([])
-  const [newName, setNewName] = useState('')
+  const [newName, setNewName] = useState('Brazil')
   // Definição da url no servidor local para teste
   // const url = "http://localhost:3001"
   useEffect(() => {
