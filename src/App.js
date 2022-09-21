@@ -94,7 +94,7 @@ const Form = (props) =>{
 }
 const App = ()=> {
   const [city, setCity] = useState([])
-  const [newName, setNewName] = useState('Brazil')
+  const [newName, setNewName] = useState('')
   // Definição da url no servidor local para teste
   // const url = "http://localhost:3001"
   useEffect(() => {
@@ -104,7 +104,9 @@ const App = ()=> {
     })
 }, [])
 
+// console.log('city ', city);
 let selectedCountries = new RegExp(newName)
+console.log('city teste', city);
 const result = city.filter(newCity => newCity.name.common.search(selectedCountries) >= 0)
 // console.log('result Show', result);
 
