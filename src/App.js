@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
+//Componente da previsão do tempo
+// const Temp = ()=>{
+//
+// }
+
 const Detail = (props)=>{
   const [show, setShow] = useState('w3-hide')
   const showDetail = (event) => {
@@ -24,17 +29,20 @@ const Detail = (props)=>{
           show === 'w3-hide'
           ? show
           : show}>Language native: {countries.nativeLanguage}</p>
-          <p className={
-              show === 'w3-hide'
-              ? show
-              : show}>Subregião: {countries.subregion}</p>
+      <p className={
+          show === 'w3-hide'
+          ? show
+          : show}>Subregião: {countries.subregion}</p>
       <button name={index} type="submit" onClick={showDetail}>show/hide</button>
       </div>)
 }
 
 const Show = ({result, showValue, setShowValue,
             showDetail, showIndice})=>{
-
+  //Definição aqui da cidade na previsão do tempo
+  //A mesma cidade mostrada ao usuário na pesquisa
+  // const [cityTemp, setCityTemp] = useState('');
+  // const urlTemp = "https://api.hgbrasil.com/weather?key=SUA-CHAVE&city_name=Campinas,SP"
   const paises = [];
   //percorrendo os países e preenchendo o array
     result.forEach(countrie =>{
@@ -53,6 +61,8 @@ const Show = ({result, showValue, setShowValue,
       paises.map((countries, index) => <li key={index}>
         <h1>{countries.name.common}</h1><br />
         <b>Capital:</b> {countries.capital}<br />
+        <b>Área:</b> {countries.area}<br />
+        <b>Região:</b> {countries.region}<br />
         <img width="50%" src={countries.flags.svg} alt="flag" />
         </li>);
 
@@ -62,6 +72,7 @@ const Show = ({result, showValue, setShowValue,
       </div>
     )
   }
+  //Apresentação detalhada de apenas uma cidade/país
   if (selectedsDetails.length === 1) {
     return(<div className="w3-left">
             <ul className="list">{selectedsDetails}</ul>
@@ -95,7 +106,7 @@ const Form = (props) =>{
 const App = ()=> {
   const [city, setCity] = useState([])
   const [newName, setNewName] = useState('')
-  // Definição da url no servidor local para teste
+
   const url = "https://restcountries.com"
   useEffect(() => {
   axios
