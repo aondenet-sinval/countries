@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-require('dotenv').config();
+// require('dotenv').config();
 
 const Temperature = (props)=>{
   const [result,setResult] = useState([])
   const city = props.city
   const url = "https://api.openweathermap.org/data/2.5/"
-  const key = process.env.REACT_APP_API_KEY
+  const key = props.keyEnv
   console.log('key ', key);
   useEffect(() => {
   axios
@@ -30,9 +30,18 @@ result.main
 const selectedTemperature =
   temperature.map((weather, index) => <li key={index}>
     <b>Umidade:</b> {weather.humidity}<br />
-    <b>Temperatura:</b> {weather.temp}<br />
-    <b>Temp. máxima:</b> {weather.temp_min}<br />
-    <b>Temp. mínima:</b> {weather.temp_min}<br />
+    <b>Temperatura:</b> {
+      weather.temp !== 0
+      ? (weather.temp - 273.15).toFixed(2)
+      : 0 }<br />
+    <b>Temp. máxima:</b> {
+      weather.temp_min !== 0
+      ? (weather.temp_min - 273.15).toFixed(2)
+      : 0 }<br />
+    <b>Temp. mínima:</b> {
+      weather.temp_min !== 0
+      ? (weather.temp_min - 273.15).toFixed(2)
+      : 0}<br />
     </li>);
 
 console.log('result clima ', temperature);

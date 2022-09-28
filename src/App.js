@@ -4,9 +4,7 @@ import axios from 'axios';
 import './App.css';
 
 //Componente da previsão do tempo
-// const Temp = ()=>{
-//
-// }
+const keyEnv = process.env.REACT_APP_API_KEY
 
 const Detail = (props)=>{
   const [show, setShow] = useState('w3-hide')
@@ -65,7 +63,7 @@ const Show = ({result, showValue, setShowValue,
         <b>Área:</b> {countries.area}<br />
         <b>Região:</b> {countries.region}<br />
         <img width="50%" src={countries.flags.svg} alt="flag" />
-        <Temperature city={countries.capital} />
+        <Temperature city={countries.capital} keyEnv={keyEnv} />
         </li>);
 
   if (selectedsGroup.length < 11 && selectedsGroup.length > 1) {
@@ -119,6 +117,7 @@ const App = ()=> {
 
 // console.log('city ', city);
 let selectedCountries = new RegExp(newName)
+console.log('keyEnv valor ', keyEnv);
 console.log('city teste', city);
 const result = city.filter(newCity => newCity.name.common.search(selectedCountries) >= 0)
 // console.log('result Show', result);
