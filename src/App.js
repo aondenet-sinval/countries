@@ -17,7 +17,7 @@ const Detail = (props)=>{
 
   }
   const { countries, index } = props
-  console.log('countries ', countries);
+  // console.log('countries ', countries);
 
     return(<div >
       <p className={
@@ -118,8 +118,7 @@ const App = ()=> {
 
 // console.log('city ', city);
 let selectedCountries = new RegExp(newName)
-console.log('keyEnv valor ', keyEnv);
-console.log('city teste', city);
+
 const result = city.filter(newCity => newCity.name.common.search(selectedCountries) >= 0)
 // console.log('result Show', result);
 

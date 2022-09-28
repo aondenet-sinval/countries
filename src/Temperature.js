@@ -8,7 +8,7 @@ const Temperature = (props)=>{
   const city = props.city
   const url = "https://api.openweathermap.org/data/2.5/"
   const key = props.keyEnv
-  console.log('key ', key);
+  // console.log('key ', key);
   useEffect(() => {
   axios
     .get(`${url}weather?q=${city}&appid=${key}`).then(response => {
@@ -16,7 +16,7 @@ const Temperature = (props)=>{
     })
 }, [city]);
 
-console.log('isarray result ', Array.isArray(result));
+// console.log('isarray result ', Array.isArray(result));
 const temperature = [];
 result.main
 ? temperature.push(result.main)
@@ -44,7 +44,7 @@ const selectedTemperature =
       : 0}<br />
     </li>);
 
-console.log('result clima ', temperature);
+// console.log('result clima ', temperature);
   return(<ul>{selectedTemperature}</ul>)
 }
 
