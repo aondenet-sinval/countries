@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Temperature from 'Temperature';
+import Temperature from './Temperature';
 import axios from 'axios';
 import './App.css';
 
