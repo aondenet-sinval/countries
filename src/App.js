@@ -64,6 +64,7 @@ const Show = ({result, showValue, setShowValue,
         <b>Área:</b> {countries.area}<br />
         <b>Região:</b> {countries.region}<br />
         <img width="50%" src={countries.flags.svg} alt="flag" />
+        <Temperature city={countries.capital} />
         </li>);
 
   if (selectedsGroup.length < 11 && selectedsGroup.length > 1) {
