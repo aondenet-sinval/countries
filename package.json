@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "0.9.5"
@@ -15,6 +16,5 @@
     "eject": "react-scripts eject",
     "server": "json-server -p3001 --watch dbteste.json"
   },
-  "proxy": "https://restcountries.com",
   "proxy": "https://api.openweathermap.org"
 }
