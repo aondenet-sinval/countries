@@ -5,16 +5,28 @@ import './App.css';
 const Temperature = (props)=>{
   const [result,setResult] = useState([])
   const city = props.city
-  const url = "http://api.weatherstack.com/current"
-  const key = process.env.CLIMA_API_KEY
+  const url = "https://api.openweathermap.org/data/2.5/"
+  const key = '3cd09b604a26a19ce507cc9f80c20ec1'
+  console.log('key ', key);
   useEffect(() => {
   axios
-    .get(`${url}?access_key=${key}&query=${city}`).then(response => {
+    .get(`${url}weather?q=${city}&appid=${key}`).then(response => {
       setResult(response.data);
     })
 }, [city]);
-console.log('result clima ', result);
-  return(<p>Temperature...</p>)
+
+console.log('isarray result ', Array.isArray(result));
+const temperature = [];
+temperature.push(result.main)
+const selectedTemperature = 'ee'
+// const selectedTemperature =
+  // temperature.map((weather, index) => <li key={index}>
+  //   <b>Temp. máxima:</b> {weather.temp_max}<br />
+  //   <b>Temp. mínima:</b> {/*weather.main.temp_min*/}<br />
+  //   </li>);
+
+console.log('result clima ', temperature);
+  return(<ul>{selectedTemperature}</ul>)
 }
 
 export default Temperature;

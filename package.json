@@ -15,5 +15,6 @@
     "eject": "react-scripts eject",
     "server": "json-server -p3001 --watch dbteste.json"
   },
-  "proxy": "https://restcountries.com"
+  "proxy": "https://restcountries.com",
+  "proxy": "https://api.openweathermap.org"
 }
