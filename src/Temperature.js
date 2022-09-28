@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-// require('dotenv').config();
+
 
 const Temperature = (props)=>{
   const [result,setResult] = useState([])

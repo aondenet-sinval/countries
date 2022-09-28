@@ -38,10 +38,7 @@ const Detail = (props)=>{
 
 const Show = ({result, showValue, setShowValue,
             showDetail, showIndice})=>{
-  //Definição aqui da cidade na previsão do tempo
-  //A mesma cidade mostrada ao usuário na pesquisa
-  // const [cityTemp, setCityTemp] = useState('');
-  // const urlTemp = "https://api.hgbrasil.com/weather?key=SUA-CHAVE&city_name=Campinas,SP"
+
   const paises = [];
   //percorrendo os países e preenchendo o array
     result.forEach(countrie =>{
